@@ -4,25 +4,23 @@ import MultiButton from "./MultiButton";
 import ChangeItUp from "./ChangeItUp";
 import Login from "./Login";
 
+
+// Clickable component returns a button with a click event 
+function Clickable ({ onClick}) {
+  return <button onClick={onClick}>Click Me!</button>
+};
+
 function App() {
-  return (
-    <div>
-      <h3>onClick</h3>
-      <Tickler />
-      <hr />
+  //function that is passed to button click event
+   function handleClick () {
+     console.log("click")
+   }
 
-      <MultiButton />
-      <hr />
-
-      <h3>onChange</h3>
-      <ChangeItUp />
-      <hr />
-
-      <h3>onSubmit</h3>
-      <Login />
-      <hr />
-    </div>
+   // Calls clickable component
+   return (
+     <Clickable onClick={handleClick} />
   );
+
 }
 
 export default App;
